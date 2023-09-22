@@ -117,37 +117,23 @@
             </div>
             <div class="col-md-6">
                 <h2>Student Listing</h2>
-                <table class="table table-bordered custom-table">
-                    <thead>
-                        <tr class="thead-primary">
-                            <th>Student Name</th>
-                            <th>Gender</th>
-                            <th>Course</th>
-                            <th>Section</th>
-                            <th>Year</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($product as $pr): ?>
-                            <tr>
-                                <td><?= $pr['StudName'] ?></td>
-                                <td><?= $pr['StudGender'] ?></td>
-                                <td><?= $pr['StudCourse'] ?></td>
-                                <td><?= $pr['StudSection'] ?></td>
-                                <td><?= $pr['StudYear'] ?></td>
-                                <td>
-                                    <a href="/delete/<?= $pr['id'] ?>" class="btn btn-danger btn-sm custom-delete-button">
-                                        <i class="fas fa-trash custom-icon"></i> Delete
-                                    </a>
-                                    <a href="/edit/<?= $pr['id'] ?>" class="btn btn-primary btn-sm custom-edit-button">
-                                        <i class="fas fa-edit custom-icon"></i> Edit
-                                    </a>
-                                </td>
-                            </tr>
-                        <?php endforeach ?>
-                    </tbody>
-                </table>
+                <ul>
+                    <?php foreach ($product as $pr): ?>
+                        <li>
+                            <strong>Student Name:</strong> <?= $pr['StudName'] ?><br>
+                            <strong>Gender:</strong> <?= $pr['StudGender'] ?><br>
+                            <strong>Course:</strong> <?= $pr['StudCourse'] ?><br>
+                            <strong>Section:</strong> <?= $pr['StudSection'] ?><br>
+                            <strong>Year:</strong> <?= $pr['StudYear'] ?><br>
+                            <a href="/delete/<?= $pr['id'] ?>" class="btn btn-danger btn-sm custom-delete-button">
+                                <i class="fas fa-trash custom-icon"></i> Delete
+                            </a>
+                            <a href="/edit/<?= $pr['id'] ?>" class="btn btn-primary btn-sm custom-edit-button">
+                                <i class="fas fa-edit custom-icon"></i> Edit
+                            </a>
+                        </li>
+                    <?php endforeach ?>
+                </ul>
             </div>
         </div>
     </div>
